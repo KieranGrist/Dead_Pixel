@@ -35,15 +35,7 @@ void UGrabObject::BeginPlay()
 void UGrabObject::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-	DrawDebugLine(
-		GetWorld(),
-		GetReachLineStart(),
-		GetReachLineEnd(),
-		FColor(255, 0, 0),
-		false,
-		0.f,
-		0.f,
-		10.f);
+
 	if (!PhysicsHandle) { return; }
 	// if the physics handle is attached
 	if (PhysicsHandle->GetGrabbedComponent())
