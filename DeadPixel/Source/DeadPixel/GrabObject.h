@@ -1,9 +1,11 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
-
+#include"Radio.h"
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "DoorKey.h"
+#include "Door.h"
 #include "PhysicsEngine/PhysicsHandleComponent.h"
 #include "Components/InputComponent.h"
 #include "Components/PrimitiveComponent.h"
@@ -30,14 +32,18 @@ public:
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 
-		
-private:
-	// How far ahead of the player can we reach in cm
-	float Reach = 200.f;
+	void OpenDoor();
 
-	UPhysicsHandleComponent* PhysicsHandle = nullptr;
+	void ActivateRadio();
 
-	UInputComponent* InputComponent = nullptr;
+	void PlaceBattery();
+
+
+
+	void PickupItem();
+
+	void UnlockDoor();
+
 
 	// Ray-cast and grab what's in reach
 	void Grab();
@@ -59,4 +65,22 @@ private:
 
 	// Returns current end of reach line
 	FVector GetReachLineEnd();
+private:
+	// How far ahead of the player can we reach in cm
+	
+	UPROPERTY(EditAnywhere)
+		AActor* Radio;
+		URadio* RadioComponent;
+	UPROPERTY(VisibleAnywhere)
+	float Reach = 500.f;
+	UPROPERTY(VisibleAnywhere)
+	UPhysicsHandleComponent* PhysicsHandle = nullptr;
+	UPROPERTY(VisibleAnywhere)
+	UInputComponent* InputComponent = nullptr;
+	UPROPERTY(VisibleAnywhere)
+	bool Key;
+	UPROPERTY(VisibleAnywhere)
+	UDoorKey* KeyDetails = nullptr;
+	UPROPERTY(VisibleAnywhere)
+	bool BatteryInInventory = false;
 };
