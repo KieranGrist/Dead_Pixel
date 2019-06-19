@@ -36,16 +36,25 @@ void UGrabObject::TickComponent(float DeltaTime, ELevelTick TickType, FActorComp
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
+	
+
+	if (Radio)
+	{
+		if (Radio->FindComponentByClass<URadio>())
+		{
+			RadioComponent = Radio->FindComponentByClass<URadio>();
+		}
+	}
+	else
+	{
+		UE_LOG(LogTemp, Error, TEXT("%s missing Radio"), *GetOwner()->GetName())
+	}
 	if (!PhysicsHandle) { return; }
 	// if the physics handle is attached
 	if (PhysicsHandle->GetGrabbedComponent())
 	{
 		// move the object that we're holding
 		PhysicsHandle->SetTargetLocation(GetReachLineEnd());
-	}
-	if (Radio->FindComponentByClass<URadio>())
-	{
-		RadioComponent = Radio->FindComponentByClass<URadio>();
 	}
 }
 

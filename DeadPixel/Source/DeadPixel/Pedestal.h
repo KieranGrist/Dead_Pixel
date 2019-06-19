@@ -30,17 +30,17 @@ private:
 	bool Activated;
 	//
 	UPROPERTY(EditAnywhere)
-	ATriggerVolume* GoldPressurePlate;
+	ATriggerVolume* GoldAntenaPressurePlate;
 	UPROPERTY(EditAnywhere)
-	ATriggerVolume* MetalPressurePlate;
+	ATriggerVolume* SilverAntenaPressurePlate;
 	UPROPERTY(EditAnywhere)
-	ATriggerVolume* RockPressurePlate;
+	ATriggerVolume* BrozneAntenaPressurePlate;
 	UPROPERTY(EditAnywhere)
-	AActor* GoldTotum;
+	AActor* GoldAntena;
 	UPROPERTY(EditAnywhere)
-		AActor* MetalTotum;
+		AActor* SilverAntena;
 	UPROPERTY(EditAnywhere)
-		AActor* RockTotum;
+		AActor* BronzeAntena;
 	UPROPERTY(EditAnywhere)
 	
 	

@@ -44,27 +44,27 @@ void UPedestal::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompon
 
 
 
-	if (GoldPressurePlate && GoldPressurePlate->IsOverlappingActor(GoldTotum))
+	if (GoldAntenaPressurePlate && GoldAntenaPressurePlate->IsOverlappingActor(GoldAntena))
 	{
-		GoldTotum->SetActorLocation(GoldPressurePlate->GetActorLocation() );
-		GoldTotum->DisableComponentsSimulatePhysics();
+		GoldAntena->SetActorLocation(GoldAntenaPressurePlate->GetActorLocation() );
+		GoldAntena->DisableComponentsSimulatePhysics();
 	}
 
-	if (MetalPressurePlate && MetalPressurePlate->IsOverlappingActor(MetalTotum))
+	if (SilverAntenaPressurePlate && SilverAntenaPressurePlate->IsOverlappingActor(SilverAntena))
 	{
-		MetalTotum->SetActorLocation(MetalPressurePlate->GetActorLocation());
-		MetalTotum->DisableComponentsSimulatePhysics();
+		SilverAntena->SetActorLocation(SilverAntenaPressurePlate->GetActorLocation());
+		SilverAntena->DisableComponentsSimulatePhysics();
 	}
 
-	if (RockPressurePlate && RockPressurePlate->IsOverlappingActor(RockTotum))
+	if (BrozneAntenaPressurePlate && BrozneAntenaPressurePlate->IsOverlappingActor(BronzeAntena))
 	{
-		RockTotum->SetActorLocation(RockPressurePlate->GetActorLocation() );
-		RockTotum->DisableComponentsSimulatePhysics();
+		BronzeAntena->SetActorLocation(BrozneAntenaPressurePlate->GetActorLocation() );
+		BronzeAntena->DisableComponentsSimulatePhysics();
 	}
 
-	if (GoldPressurePlate && GoldPressurePlate->IsOverlappingActor(GoldTotum) &&
-		MetalPressurePlate && MetalPressurePlate->IsOverlappingActor(MetalTotum) &&
-		RockPressurePlate && RockPressurePlate->IsOverlappingActor(RockTotum))
+	if (GoldAntenaPressurePlate && GoldAntenaPressurePlate->IsOverlappingActor(GoldAntena) &&
+		SilverAntenaPressurePlate && SilverAntenaPressurePlate->IsOverlappingActor(SilverAntena) &&
+		BrozneAntenaPressurePlate && BrozneAntenaPressurePlate->IsOverlappingActor(BronzeAntena))
 	{
 		Door->UnlockDoor();
 		Door->OpenDoor();
