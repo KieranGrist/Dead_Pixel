@@ -13,3 +13,7 @@ DeadPixel/\.vs/
 DeadPixel/Content/StarterContent/HDRI/
 
 DeadPixel/Content/StarterContent/Textures/
+
+*.prproj
+
+*.avi
