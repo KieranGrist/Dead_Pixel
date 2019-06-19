@@ -1,12 +1,15 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "GrabObject.h"
-
 #include "GameFramework/Actor.h"
 #include "Engine/World.h"
 #include "Battery.h"
 #include "GameFramework/PlayerController.h"
 #include "Engine/Public/DrawDebugHelpers.h"
+#include "Kismet/GameplayStatics.h"
+#include "EngineUtils.h"
+#include "Engine/StaticMeshActor.h"
+
 #define OUT 
 
 // Sets default values for this component's properties
@@ -35,7 +38,15 @@ void UGrabObject::BeginPlay()
 void UGrabObject::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-
+	
+	// With hard coded class
+	for (TActorIterator<AActor> CharacterItr(GetWorld()); CharacterItr; ++CharacterItr)
+	{
+		if (CharacterItr->FindComponentByClass<URadio>())
+		{
+			Radio = *CharacterItr;
+		}
+	}
 	
 
 	if (Radio)
