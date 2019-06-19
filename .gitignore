@@ -1,5 +1,5 @@
 
-DeadPixel/Content/StarterContent/
+
 
 DeadPixel/Saved/
 
@@ -8,3 +8,8 @@ DeadPixel/Binaries/
 DeadPixel/Intermediate/
 
 DeadPixel/\.vs/
+
+
+DeadPixel/Content/StarterContent/HDRI/
+
+DeadPixel/Content/StarterContent/Textures/

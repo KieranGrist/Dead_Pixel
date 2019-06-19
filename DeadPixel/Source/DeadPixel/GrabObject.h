@@ -65,11 +65,12 @@ public:
 
 	// Returns current end of reach line
 	FVector GetReachLineEnd();
+	UPROPERTY(EditAnywhere)
+		AActor* Radio;
 private:
 	// How far ahead of the player can we reach in cm
 	
-	UPROPERTY(EditAnywhere)
-		AActor* Radio;
+
 		URadio* RadioComponent;
 	UPROPERTY(VisibleAnywhere)
 	float Reach = 500.f;

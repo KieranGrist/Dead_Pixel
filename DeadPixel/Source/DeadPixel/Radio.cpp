@@ -1,8 +1,11 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "Radio.h"
-
-
+#include "Engine/World.h"
+#include "Battery.h"
+#include "GameFramework/PlayerController.h"
+#include "Engine/Public/DrawDebugHelpers.h"
+#include "GrabObject.h"
 // Sets default values for this component's properties
 URadio::URadio()
 {
@@ -27,6 +30,7 @@ void URadio::BeginPlay()
 // Called every frame
 void URadio::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
+
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 	Anteneas = AntenaControler->FindComponentByClass<UPedestal>();	
 	// ...

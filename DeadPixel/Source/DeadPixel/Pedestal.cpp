@@ -47,18 +47,21 @@ void UPedestal::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompon
 	if (GoldAntenaPressurePlate && GoldAntenaPressurePlate->IsOverlappingActor(GoldAntena))
 	{
 		GoldAntena->SetActorLocation(GoldAntenaPressurePlate->GetActorLocation() );
+		GoldAntena->SetActorRotation(FRotator(0, 0, 0));
 		GoldAntena->DisableComponentsSimulatePhysics();
 	}
 
 	if (SilverAntenaPressurePlate && SilverAntenaPressurePlate->IsOverlappingActor(SilverAntena))
 	{
 		SilverAntena->SetActorLocation(SilverAntenaPressurePlate->GetActorLocation());
+		SilverAntena->SetActorRotation(FRotator(0, 0, 0));
 		SilverAntena->DisableComponentsSimulatePhysics();
 	}
 
 	if (BrozneAntenaPressurePlate && BrozneAntenaPressurePlate->IsOverlappingActor(BronzeAntena))
 	{
 		BronzeAntena->SetActorLocation(BrozneAntenaPressurePlate->GetActorLocation() );
+		BronzeAntena->SetActorRotation(FRotator(0, 0, 0));
 		BronzeAntena->DisableComponentsSimulatePhysics();
 	}
 
